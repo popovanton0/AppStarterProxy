@@ -18,16 +18,21 @@
         </activity>
         <activity android:name=".LaunchActivity"
             android:theme="@style/Theme.Transparent">
-            <intent-filter>
+            <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.LAUNCHER" />
 
-                <data android:scheme="openapp" />
+                <data android:scheme="https"
+                    android:host="popovanton0.github.io"
+                    android:path="/AppStarterProxy/"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:theme="@style/AppTheme.MaterialAboutActivity.Light.DarkActionBar" />
     </application>
 
 </manifest>

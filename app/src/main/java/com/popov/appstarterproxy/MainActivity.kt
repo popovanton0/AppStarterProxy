@@ -1,7 +1,17 @@
 package com.popov.appstarterproxy
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import android.widget.Toast.LENGTH_LONG
+import com.popov.appstarterproxy.model.AndroidApp
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -14,5 +24,35 @@ class MainActivity : AppCompatActivity() {
         toolbar.setTitle(R.string.app_name)
         toolbar.setTitleTextColor(resources.getColor(android.R.color.white))
         setSupportActionBar(toolbar)
+
+        val mainIntent2 = Intent(Intent.ACTION_MAIN, null)
+        mainIntent2.addCategory(Intent.CATEGORY_LAUNCHER)
+        val appsList = packageManager.queryIntentActivities(mainIntent2, 0).map {
+            AndroidApp(
+                    it.loadLabel(packageManager).toString(),
+                    it.activityInfo.packageName/*,
+                    it.loadIcon(packageManager)*/
+            )
+        }
+
+        val arrayAdapter = ArrayAdapter<AndroidApp>(this, android.R.layout.select_dialog_item)
+        arrayAdapter.addAll(appsList)
+        listView.adapter = arrayAdapter
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val packageName = arrayAdapter.getItem(position).packageName
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            clipboard.primaryClip = ClipData.newPlainText("app url", getString(R.string.url) + packageName)
+            Toast.makeText(this, R.string.url_copied, LENGTH_LONG).show()
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean = menuInflater.inflate(R.menu.main, menu).run { true }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.about -> {
+            startActivity(Intent(this, AboutActivity::class.java))
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 }

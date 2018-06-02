@@ -11,7 +11,7 @@ class LaunchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
 
-        val packageName = intent.data?.host ?: ""
+        val packageName = intent.data?.getQueryParameter("packageName") ?: ""
         openApp(this, packageName)
         finish()
     }

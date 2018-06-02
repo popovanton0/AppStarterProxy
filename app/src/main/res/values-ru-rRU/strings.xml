@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppStarterProxy</string>
+    <string name="choose_app">Выберите приложение для получения ссылки на него</string>
+    <string name="url_copied">Ссылка скопировна в буфер обмена</string>
+    <string name="description">Это приложение для создания ссылок на андроид приложения. Например, такую ссылку можно вставить в презентацию MS PowerPoint для открытия приложения из презентации, запущенной на смартфоне</string>
+    <string name="version_text">Версия</string>
+    <string name="author_title">Автор</string>
+    <string name="author_name">Антон Попов</string>
+    <string name="author_profession">Android разработчик</string>
+    <string name="about_menu_item_title">О программе</string>
+    <string name="licenses">Лицензии</string>
+    <string name="app_icon">Иконка приложения</string>
+</resources>

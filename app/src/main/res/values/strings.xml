@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">AppStarterProxy</string>
+    <string name="choose_app">Choose app to get link to</string>
+    <string name="url_copied">Url copied to clipboard</string>
+    <string name="url" translatable="false">https://popovanton0.github.io/AppStarterProxy/?packageName=</string>
+    <string name="description">This is an app for creating urls to open android apps. For example, to opening an app right from MS PowerPoint presentation running on mobile</string>
+    <string name="version_text">Version</string>
+    <string name="author_title">Author</string>
+    <string name="author_name">Anton Popov</string>
+    <string name="author_profession">Android developer</string>
+    <string name="github" translatable="false">Github</string>
+    <string name="author_on_github_url" translatable="false">https://github.com/popovanton0</string>
+    <string name="about_menu_item_title">About</string>
+    <string name="licenses">Licenses</string>
+    <string name="app_icon">App icon</string>
+    <string name="app_icon_license" translatable="false"><div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" title="Creative Commons BY 3.0">CC 3.0 BY</a></div></string>
 </resources>
