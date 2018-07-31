@@ -6,3 +6,7 @@ app right from MS PowerPoint presentation running on mobile
 App can open specific urls like: https://popovanton0.github.io/AppStarterProxy/?packageName=com.android.chrome
 
 When app gets url it starts intent to open app with specified package name
+
+## Download
+
+[Download Signed APK](https://github.com/popovanton0/AppStarterProxy/releases/download/1.0/app-release.apk)
